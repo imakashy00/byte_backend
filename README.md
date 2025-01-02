@@ -15,18 +15,24 @@ A FastAPI-based REST API for managing tasks with user authentication.
 ```bash
 # Clone the repository
 git clone https://github.com/imakashy00/byte_backend.git
-cd byte
+cd byte_backend
 ```
 ## or
 ### From zip folder
 - Unzip the folder
-- ` cd byte `
+- ` cd byte_backend-main  folder`
+- Open in vscode
 
 ### Create virtual environment
-
+- For Linux & Macos
+```bash
+python3 -m venv env
+source env/bin/activate
+```
+- For Windows
 ```bash
 python -m venv env
-source env/bin/activate
+env\Scripts\activate
 ```
 
 ### Install dependencies
@@ -38,13 +44,14 @@ pip install -r requirements.txt
 ### Setup .env file 
 - Set following variables
     - `POSTGRES_DATABASE_URL`
+        - Get database_url from neondb or local postgres server
     - `SECRET_KEY`
-        - Get SECRET_KEY by running 
+        - Get SECRET_KEY by running in terminal
             ```bash
             openssl rand -hex 32    
             ```
     - `ALGORITHM` Example: "HS256" 
-    - `ACCESS_TOKEN_EXPIRE_MINUTES`  -> Int                          
+    - `ACCESS_TOKEN_EXPIRE_MINUTES`  -> Int(Ex:30)                          
 ### Database Setup
 ```bash
 # Initialize Alembic
@@ -66,7 +73,7 @@ fastapi dev
 
 ### Server will run on [ ` http://127.0.0.1:8000 ` ]
 
-### Change url to [`http://127.0.0.1:8000/docs for swaggerUI api testing `]
+### Change url to [`http://127.0.0.1:8000/docs `] for swaggerUI api testing 
 
 ## APIs
 
@@ -74,7 +81,7 @@ fastapi dev
 
 1. `POST:/register -> Register the user`
 
-2. `POST:/token -> To get token for logging`
+2. `POST:/token -> To get token for SigningIn`
 
 ### Task APIs
 
