@@ -90,3 +90,11 @@ fastapi dev
 
 
 ![APIs](/assests/images/api.png)
+
+### Testing 
+#### Authentication APIs
+- Register user through `/register` route
+- Login by clicking on `Authorize` button on top-right corner as appears in image
+#### Tasks APIs
+- They are protected
+- Once authenticated every protected route will be accessible
